@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 46aa07921c1024c4e9cd7678cd49cc4c
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - SoundBullet: {fileID: 8300000, guid: 216a33d431ef0da439313c1b125b7e1e, type: 3}
+  - DieSound: {fileID: 8300000, guid: 06917cf5a8940234da00c06adb63b63e, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
