@@ -16,7 +16,10 @@ public class Player : MonoBehaviour
     private GameObject PowerUp; //private 일떄 인스펙터에서 사용하는 방법
 
     //레이저
-
+    public GameObject Lazer;
+    public float gValue = 0;
+    
+    private GameObject currentLazer;
     //아이템 충돌
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -24,7 +27,7 @@ public class Player : MonoBehaviour
         {
             ItemCount++;
 
-            if (ItemCount >= 3) ItemCount = 3;
+            if (ItemCount > 3) ItemCount = 3;
             else
             {
                 GameObject go = Instantiate(PowerUp, transform.position, Quaternion.identity);
@@ -89,10 +92,26 @@ public class Player : MonoBehaviour
         newPosition.y = Mathf.Clamp(newPosition.y, minBounds.y, maxBounds.y);
         transform.position = newPosition;
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space))
         {
-            
+            gValue += Time.deltaTime;
+            if (gValue >= 1)
+            {
+                GameObject go = Instantiate(Lazer, pos.position, Quaternion.identity);
+                Destroy(go, 3);
+                gValue = 0;
+            }
         }
+        else
+        {
+            gValue -= Time.deltaTime;
+            if (gValue <= 0)
+            {
+                gValue = 0;
+            }
+
+        }
+
 
     }
 

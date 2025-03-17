@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Boss : MonoBehaviour
 {
+    int HP = 1000;
     int flag = 1;
     int speed = 2;
 
@@ -13,10 +14,15 @@ public class Boss : MonoBehaviour
     public Transform pos2;
     void Start()
     {
+        Invoke("Hide", 2);
         StartCoroutine(BossMissle());
         StartCoroutine(CircleFire());
     }
 
+    void Hide()
+    {
+        GameObject.Find("TextBossWarning").SetActive(false);
+    }
     void Update()
     {
         if (transform.position.x >= 1) flag *= -1;

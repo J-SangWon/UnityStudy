@@ -6,12 +6,17 @@ public class SpawnManager : MonoBehaviour
     public static SpawnManager instance;
     public GameObject Enemy;
     public GameObject Enemy2;
+    public GameObject Boss;
 
 
     public float SpawnStart = 1f;
     public float SpawnStop = 10f;
     bool swi = true;
     bool swi2 = true;
+
+    [SerializeField]
+    GameObject TextBossWarning;
+
 
     void Awake()
     {
@@ -23,6 +28,9 @@ public class SpawnManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        TextBossWarning.SetActive(false);
+        PoolManager.Instance.CreatePool(Enemy, 10); 
     }
     void Start()
     {
@@ -68,11 +76,18 @@ public class SpawnManager : MonoBehaviour
         swi = false;
         StopCoroutine("RandomSpawn");
         StartCoroutine("RandomSpawn2");
+        Invoke("stop2", 10);
     }
     void stop2()
     {
         swi2 = false;
         StopCoroutine("RandomSpan2");
+        TextBossWarning.SetActive(true);
+
+        Vector3 pos = new Vector3(0, 3, 0);
+        GameObject go = Instantiate(Boss, pos, Quaternion.identity);
     }
+
+
 
 }

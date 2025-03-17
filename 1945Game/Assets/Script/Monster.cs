@@ -2,6 +2,7 @@
 
 public class Monster : MonoBehaviour
 {
+    public int HP = 20;
     public float MonsterSpeed = 1f;
     public float delay = 1f;
     public Transform ms1;
@@ -14,6 +15,8 @@ public class Monster : MonoBehaviour
     void Start()
     {
         Invoke("CreateBullet", delay);
+
+        
     }
 
     void CreateBullet()
@@ -37,8 +40,13 @@ public class Monster : MonoBehaviour
     //미사일에 따른 데미지 입는 함수
     public void Damage(int attack)
     {
-        ItemDrop();
-        Destroy(gameObject);
+        HP -= attack;
+        if (HP <= 0) 
+        { 
+            ItemDrop();
+            //Destroy(gameObject);
+            PoolManager.Instance.Return(gameObject);
+        }
     }
 
     public void ItemDrop()

@@ -130,6 +130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BulletSpeed: 5
+  Attack: 80
   effect: {fileID: 2232342602793368754, guid: 02cb8cb4bbf0a20409c54dbb8bcfffd6, type: 3}
   Item: {fileID: 4877970486245533827, guid: 24828b8b017db494d8d835afaea1daec, type: 3}
 --- !u!61 &7012455833105186105

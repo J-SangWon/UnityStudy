@@ -5,7 +5,7 @@ public class PBullet : MonoBehaviour
 {
     public float BulletSpeed = 5f;
     //공격력
-
+    public int Attack = 10;
     //이펙트
     public GameObject effect;
     //아이템 생성
@@ -27,7 +27,7 @@ public class PBullet : MonoBehaviour
             SoundManager.instance.DieSound();
             //Delete
             Destroy(gameObject);
-            collision.gameObject.GetComponent<Monster>().Damage(1);
+            collision.gameObject.GetComponent<Monster>().Damage(Attack);
 
         }
         if (collision.gameObject.CompareTag("Boss"))
