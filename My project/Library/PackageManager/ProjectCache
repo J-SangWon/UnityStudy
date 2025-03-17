@@ -1,25 +1,28 @@
 m_ProjectFiles:
   m_ManifestFileStatus:
-    m_FilePath: C:/UnityStudy/My project/Packages/manifest.json
+    m_FilePath: "C:/Users/asdgh/OneDrive/\uBC14\uD0D5 \uD654\uBA74/Study/UnityStudy/My
+      project/Packages/manifest.json"
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638771635295305304
-    m_Hash: 2865657811
+      ticks: 638771720933445215
+    m_Hash: 2871464384
   m_LockFileStatus:
-    m_FilePath: C:/UnityStudy/My project/Packages/packages-lock.json
+    m_FilePath: "C:/Users/asdgh/OneDrive/\uBC14\uD0D5 \uD654\uBA74/Study/UnityStudy/My
+      project/Packages/packages-lock.json"
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638771635480498647
-    m_Hash: 1023976610
+      ticks: 638771720933485817
+    m_Hash: 439816876
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
   m_LocalFileStatus: []
-m_ProjectPath: C:/UnityStudy/My project/Packages
+m_ProjectPath: "C:/Users/asdgh/OneDrive/\uBC14\uD0D5 \uD654\uBA74/Study/UnityStudy/My
+  project/Packages"
 m_EditorVersion: 6000.0.40f1 (157d81624ddf)
 m_ResolvedPackages:
 - packageId: com.unity.collab-proxy@2.7.1
@@ -27,7 +30,8 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 2.7.1
   source: 1
-  resolvedPath: C:\UnityStudy\My project\Library\PackageCache\com.unity.collab-proxy@50ac96531b63
+  resolvedPath: "C:\\Users\\asdgh\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Study\\UnityStudy\\My
+    project\\Library\\PackageCache\\com.unity.collab-proxy@50ac96531b63"
   assetPath: Packages/com.unity.collab-proxy
   name: com.unity.collab-proxy
   displayName: Version Control
@@ -152,7 +156,7 @@ m_ResolvedPackages:
     configSource: 0
   hideInEditor: 1
   entitlements:
-    licensingModel: 0
+    licensingModel: 1
   isAssetStorePackage: 0
   datePublishedTicks: 638751271186710000
   documentationUrl: https://docs.unity3d.com/Packages/com.unity.collab-proxy@2.7/manual/index.html
@@ -210,7 +214,8 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.2
   source: 2
-  resolvedPath: C:\UnityStudy\My project\Library\PackageCache\com.unity.feature.development@767aadbc6eb7
+  resolvedPath: "C:\\Users\\asdgh\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Study\\UnityStudy\\My
+    project\\Library\\PackageCache\\com.unity.feature.development@767aadbc6eb7"
   assetPath: Packages/com.unity.feature.development
   name: com.unity.feature.development
   displayName: Engineering
@@ -306,12 +311,13 @@ m_ResolvedPackages:
     compatibilityLevel: 0
     minimumPackageVersion: 1.0.2
     minimumUnityVersion: 
-- packageId: com.unity.inputsystem@1.13.0
+- packageId: com.unity.inputsystem@1.13.1
   testable: 0
   isDirectDependency: 1
-  version: 1.13.0
+  version: 1.13.1
   source: 1
-  resolvedPath: C:\UnityStudy\My project\Library\PackageCache\com.unity.inputsystem@ea5ab5b33a26
+  resolvedPath: "C:\\Users\\asdgh\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Study\\UnityStudy\\My
+    project\\Library\\PackageCache\\com.unity.inputsystem@e2c83221d2dc"
   assetPath: Packages/com.unity.inputsystem
   name: com.unity.inputsystem
   displayName: Input System
@@ -418,15 +424,15 @@ m_ResolvedPackages:
     configSource: 0
   hideInEditor: 1
   entitlements:
-    licensingModel: 0
+    licensingModel: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 638743646788680000
+  datePublishedTicks: 638754888961480000
   documentationUrl: https://docs.unity3d.com/Packages/com.unity.inputsystem@1.13/manual/index.html
   hasRepository: 1
   repository:
     type: git
     url: https://github.com/Unity-Technologies/InputSystem.git
-    revision: 6893aa60ba9ca26d54487167e90481283767ed1d
+    revision: b026bb79971869f971db20399152e375b31bae01
     path: 
   unityLifecycle:
     version: 1.13.0
@@ -439,24 +445,18 @@ m_ResolvedPackages:
   git:
     hash: 
     revision: 
-  upmReserved: '{"changelog":"### Fixed\n- Fixed an issue where the prompt to enable
-    the InputSystem backends would interrupt the import of large assets.\n- Fixed
-    Cut Mode for Action Maps and Actions to make renaming disabled. [ISXB-1155](https://issuetracker.unity3d.com/product/unity/issues/guid/ISXB-1155)\n-
-    Fixed GamepadButton.LeftTrigger and GamepadButton.RightTrigger enum values not
-    matching displayed dropdown values in editor when using GamepadButtonPropertyDrawer
-    [ISXB-1270](https://issuetracker.unity3d.com/product/unity/issues/guid/ISXB-1270).\n-
-    Fixed an issue causing InvalidOperationException when entering playmode with
-    domain reload disabled. [ISXB-1208](https://issuetracker.unity3d.com/product/unity/issues/guid/ISXB-1208).\n-
-    Fixed an issue where compiling Addressables with Input System package present
-    would result in failed compilation due to `IInputAnalytic.TryGatherData` not
-    being defined [ISXB-1203](https://issuetracker.unity3d.com/product/unity/issues/guid/ISXB-1203).\n-
-    Pinned Touch Samples sample package dependencies to avoid errors with Cinemachine
-    3.x and Probuilder 6.x. [ISXB-1245](https://issuetracker.unity3d.com/product/unity/issues/guid/ISXB-1245)\n-
-    Fixed an issue where dropdown menu for Path in Input Actions Editor could not
-    be selected from any button position. [ISXB-1309](https://issuetracker.unity3d.com/product/unity/issues/guid/ISXB-1309)"}'
+  upmReserved: '{"changelog":"### Fixed\n- Fixed a problem with the logic to get
+    the active player settings object that cause an infinit reimport loop. [ISXB-1430](https://issuetracker.unity3d.com/product/unity/issues/guid/UUM-96793)\n-
+    Fixed an issue where removing a newly created action in the Asset Editor would
+    cause an exception. [UUM-95693](https://issuetracker.unity3d.com/product/unity/issues/guid/UUM-95693)\n-
+    Fixed arrow key navigation of Input Actions after Action rename. [ISXB-1024](https://issuetracker.unity3d.com/product/unity/issues/guid/ISXB-1024)\n-
+    Fixed gamepad navigation in UI Toolkit TextField when using InputSystemUIInputModule.
+    [UUM-77364](https://issuetracker.unity3d.com/product/unity/issues/guid/UUM-77364)\n-
+    Fixed issue where asset editor window splitter positions were not persisted [ISXB-1316]\n\n###
+    Changed\n- Changed default input action asset name from New Controls to New Actions."}'
   assetStore:
     productId: 
-  fingerprint: ea5ab5b33a268cd12592866b410522e9f55da7b6
+  fingerprint: e2c83221d2dc3fc990b017cbd3f9d0742649c8a8
   editorCompatibility:
     compatibilityLevel: 0
     minimumPackageVersion: 1.13.0
@@ -466,7 +466,8 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\UnityStudy\My project\Library\PackageCache\com.unity.multiplayer.center@f3fb577b3546
+  resolvedPath: "C:\\Users\\asdgh\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Study\\UnityStudy\\My
+    project\\Library\\PackageCache\\com.unity.multiplayer.center@f3fb577b3546"
   assetPath: Packages/com.unity.multiplayer.center
   name: com.unity.multiplayer.center
   displayName: Multiplayer Center
@@ -556,7 +557,8 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.8.7
   source: 1
-  resolvedPath: C:\UnityStudy\My project\Library\PackageCache\com.unity.timeline@c58b4ee65782
+  resolvedPath: "C:\\Users\\asdgh\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Study\\UnityStudy\\My
+    project\\Library\\PackageCache\\com.unity.timeline@c58b4ee65782"
   assetPath: Packages/com.unity.timeline
   name: com.unity.timeline
   displayName: Timeline
@@ -565,7 +567,7 @@ m_ResolvedPackages:
     email: 
     url: 
   category: 
-  type: 
+  type: assets
   description: Use Unity Timeline to create cinematic content, game-play sequences,
     audio sequences, and complex particle effects.
   errors: []
@@ -665,18 +667,18 @@ m_ResolvedPackages:
     recommended: 1.8.8
     deprecated: []
   dependencies:
+  - name: com.unity.modules.audio
+    version: 1.0.0
   - name: com.unity.modules.director
     version: 1.0.0
   - name: com.unity.modules.animation
     version: 1.0.0
-  - name: com.unity.modules.audio
-    version: 1.0.0
   - name: com.unity.modules.particlesystem
     version: 1.0.0
   resolvedDependencies:
-  - name: com.unity.modules.director
-    version: 1.0.0
   - name: com.unity.modules.audio
+    version: 1.0.0
+  - name: com.unity.modules.director
     version: 1.0.0
   - name: com.unity.modules.animation
     version: 1.0.0
@@ -698,7 +700,7 @@ m_ResolvedPackages:
     configSource: 0
   hideInEditor: 1
   entitlements:
-    licensingModel: 0
+    licensingModel: 1
   isAssetStorePackage: 0
   datePublishedTicks: 638524833900000000
   documentationUrl: https://docs.unity3d.com/Packages/com.unity.timeline@1.8/manual/index.html
@@ -742,7 +744,8 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 2.0.0
   source: 2
-  resolvedPath: C:\UnityStudy\My project\Library\PackageCache\com.unity.ugui@03407c6d8751
+  resolvedPath: "C:\\Users\\asdgh\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Study\\UnityStudy\\My
+    project\\Library\\PackageCache\\com.unity.ugui@03407c6d8751"
   assetPath: Packages/com.unity.ugui
   name: com.unity.ugui
   displayName: Unity UI
@@ -834,7 +837,8 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.9.5
   source: 1
-  resolvedPath: C:\UnityStudy\My project\Library\PackageCache\com.unity.visualscripting@1b53f46e931b
+  resolvedPath: "C:\\Users\\asdgh\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Study\\UnityStudy\\My
+    project\\Library\\PackageCache\\com.unity.visualscripting@1b53f46e931b"
   assetPath: Packages/com.unity.visualscripting
   name: com.unity.visualscripting
   displayName: Visual Scripting
@@ -913,7 +917,7 @@ m_ResolvedPackages:
     configSource: 0
   hideInEditor: 1
   entitlements:
-    licensingModel: 0
+    licensingModel: 1
   isAssetStorePackage: 0
   datePublishedTicks: 638659692270900000
   documentationUrl: 
@@ -3374,7 +3378,8 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 2.0.22
   source: 1
-  resolvedPath: C:\UnityStudy\My project\Library\PackageCache\com.unity.ide.visualstudio@8140e851d83e
+  resolvedPath: "C:\\Users\\asdgh\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Study\\UnityStudy\\My
+    project\\Library\\PackageCache\\com.unity.ide.visualstudio@8140e851d83e"
   assetPath: Packages/com.unity.ide.visualstudio
   name: com.unity.ide.visualstudio
   displayName: Visual Studio Editor
@@ -3383,7 +3388,7 @@ m_ResolvedPackages:
     email: 
     url: 
   category: 
-  type: 
+  type: assets
   description: Code editor integration for supporting Visual Studio as code editor
     for unity. Adds support for generating csproj files for intellisense purposes,
     auto discovery of installations, etc.
@@ -3441,7 +3446,7 @@ m_ResolvedPackages:
     configSource: 0
   hideInEditor: 1
   entitlements:
-    licensingModel: 0
+    licensingModel: 1
   isAssetStorePackage: 0
   datePublishedTicks: 638326061910000000
   documentationUrl: https://docs.unity3d.com/Packages/com.unity.ide.visualstudio@2.0/manual/index.html
@@ -3480,7 +3485,8 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 3.0.31
   source: 1
-  resolvedPath: C:\UnityStudy\My project\Library\PackageCache\com.unity.ide.rider@7921be93db40
+  resolvedPath: "C:\\Users\\asdgh\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Study\\UnityStudy\\My
+    project\\Library\\PackageCache\\com.unity.ide.rider@7921be93db40"
   assetPath: Packages/com.unity.ide.rider
   name: com.unity.ide.rider
   displayName: JetBrains Rider Editor
@@ -3489,7 +3495,7 @@ m_ResolvedPackages:
     email: 
     url: 
   category: 
-  type: 
+  type: assets
   description: The JetBrains Rider Editor package provides an integration for using
     the JetBrains Rider IDE as a code editor for Unity. It adds support for generating
     .csproj files for code completion and auto-discovery of installations.
@@ -3562,7 +3568,7 @@ m_ResolvedPackages:
     configSource: 0
   hideInEditor: 1
   entitlements:
-    licensingModel: 0
+    licensingModel: 1
   isAssetStorePackage: 0
   datePublishedTicks: 638548308080000000
   documentationUrl: https://docs.unity3d.com/Packages/com.unity.ide.rider@3.0/manual/index.html
@@ -3599,7 +3605,8 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 1.0.0
   source: 1
-  resolvedPath: C:\UnityStudy\My project\Library\PackageCache\com.unity.editorcoroutines@7d48783e7b8c
+  resolvedPath: "C:\\Users\\asdgh\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Study\\UnityStudy\\My
+    project\\Library\\PackageCache\\com.unity.editorcoroutines@7d48783e7b8c"
   assetPath: Packages/com.unity.editorcoroutines
   name: com.unity.editorcoroutines
   displayName: Editor Coroutines
@@ -3608,7 +3615,7 @@ m_ResolvedPackages:
     email: 
     url: 
   category: 
-  type: 
+  type: asset
   description: 'The editor coroutines package allows developers to start constructs
     similar to Unity''s monobehaviour based coroutines within the editor using abitrary
     objects. '
@@ -3642,7 +3649,7 @@ m_ResolvedPackages:
     configSource: 0
   hideInEditor: 1
   entitlements:
-    licensingModel: 0
+    licensingModel: 1
   isAssetStorePackage: 0
   datePublishedTicks: 637232611380000000
   documentationUrl: 
@@ -3676,7 +3683,8 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 1.2.3
   source: 1
-  resolvedPath: C:\UnityStudy\My project\Library\PackageCache\com.unity.performance.profile-analyzer@a68e7bc84997
+  resolvedPath: "C:\\Users\\asdgh\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Study\\UnityStudy\\My
+    project\\Library\\PackageCache\\com.unity.performance.profile-analyzer@a68e7bc84997"
   assetPath: Packages/com.unity.performance.profile-analyzer
   name: com.unity.performance.profile-analyzer
   displayName: Profile Analyzer
@@ -3726,7 +3734,7 @@ m_ResolvedPackages:
     configSource: 0
   hideInEditor: 1
   entitlements:
-    licensingModel: 0
+    licensingModel: 1
   isAssetStorePackage: 0
   datePublishedTicks: 638699545898200000
   documentationUrl: https://docs.unity3d.com/Packages/com.unity.performance.profile-analyzer@1.2/manual/index.html
@@ -3761,7 +3769,8 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 1.4.6
   source: 1
-  resolvedPath: C:\UnityStudy\My project\Library\PackageCache\com.unity.test-framework@5ac417e07314
+  resolvedPath: "C:\\Users\\asdgh\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Study\\UnityStudy\\My
+    project\\Library\\PackageCache\\com.unity.test-framework@5ac417e07314"
   assetPath: Packages/com.unity.test-framework
   name: com.unity.test-framework
   displayName: Test Framework
@@ -3864,7 +3873,7 @@ m_ResolvedPackages:
     configSource: 0
   hideInEditor: 1
   entitlements:
-    licensingModel: 0
+    licensingModel: 1
   isAssetStorePackage: 0
   datePublishedTicks: 638743524358990000
   documentationUrl: https://docs.unity3d.com/Packages/com.unity.test-framework@1.4/manual/index.html
@@ -3913,7 +3922,8 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 1.2.6
   source: 1
-  resolvedPath: C:\UnityStudy\My project\Library\PackageCache\com.unity.testtools.codecoverage@205a02cbcb39
+  resolvedPath: "C:\\Users\\asdgh\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Study\\UnityStudy\\My
+    project\\Library\\PackageCache\\com.unity.testtools.codecoverage@205a02cbcb39"
   assetPath: Packages/com.unity.testtools.codecoverage
   name: com.unity.testtools.codecoverage
   displayName: Code Coverage
@@ -3922,7 +3932,7 @@ m_ResolvedPackages:
     email: 
     url: 
   category: 
-  type: 
+  type: assets
   description: Use this package to export code coverage data and reports from your
     automated tests. Additionally, the Code Coverage package offers a Coverage Recording
     feature which allows capturing coverage data on demand, for manual testing or
@@ -3997,7 +4007,7 @@ m_ResolvedPackages:
     configSource: 0
   hideInEditor: 1
   entitlements:
-    licensingModel: 0
+    licensingModel: 1
   isAssetStorePackage: 0
   datePublishedTicks: 638575857900000000
   documentationUrl: https://docs.unity3d.com/Packages/com.unity.testtools.codecoverage@1.2/manual/index.html
@@ -4036,7 +4046,8 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 2.0.1
   source: 1
-  resolvedPath: C:\UnityStudy\My project\Library\PackageCache\com.unity.settings-manager@56a930affa1e
+  resolvedPath: "C:\\Users\\asdgh\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Study\\UnityStudy\\My
+    project\\Library\\PackageCache\\com.unity.settings-manager@56a930affa1e"
   assetPath: Packages/com.unity.settings-manager
   name: com.unity.settings-manager
   displayName: Settings Manager
@@ -4045,7 +4056,7 @@ m_ResolvedPackages:
     email: 
     url: 
   category: 
-  type: 
+  type: asset
   description: A framework for making any serializable field a setting, complete
     with a pre-built settings interface.
   errors: []
@@ -4076,7 +4087,7 @@ m_ResolvedPackages:
     configSource: 0
   hideInEditor: 1
   entitlements:
-    licensingModel: 0
+    licensingModel: 1
   isAssetStorePackage: 0
   datePublishedTicks: 637744099390000000
   documentationUrl: 
@@ -4110,7 +4121,8 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 2.0.5
   source: 1
-  resolvedPath: C:\UnityStudy\My project\Library\PackageCache\com.unity.ext.nunit@60ef35ffd3cd
+  resolvedPath: "C:\\Users\\asdgh\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Study\\UnityStudy\\My
+    project\\Library\\PackageCache\\com.unity.ext.nunit@60ef35ffd3cd"
   assetPath: Packages/com.unity.ext.nunit
   name: com.unity.ext.nunit
   displayName: Custom NUnit
@@ -4119,7 +4131,7 @@ m_ResolvedPackages:
     email: 
     url: 
   category: Libraries
-  type: 
+  type: assets
   description: A custom version of NUnit used by Unity Test Framework. Based on NUnit
     version 3.5 and works with all platforms, il2cpp and Mono AOT.
   errors: []
@@ -4155,7 +4167,7 @@ m_ResolvedPackages:
     configSource: 0
   hideInEditor: 1
   entitlements:
-    licensingModel: 0
+    licensingModel: 1
   isAssetStorePackage: 0
   datePublishedTicks: 638236642220000000
   documentationUrl: https://docs.unity3d.com/Packages/com.unity.ext.nunit@2.0/manual/index.html
