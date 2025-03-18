@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -18,7 +19,8 @@ public class Player : MonoBehaviour
     //레이저
     public GameObject Lazer;
     public float gValue = 0;
-    
+    public Image Gage;
+
     private GameObject currentLazer;
     //아이템 충돌
     private void OnTriggerEnter2D(Collider2D collision)
@@ -95,6 +97,7 @@ public class Player : MonoBehaviour
         if (Input.GetKey(KeyCode.Space))
         {
             gValue += Time.deltaTime;
+            Gage.fillAmount = gValue;
             if (gValue >= 1)
             {
                 GameObject go = Instantiate(Lazer, pos.position, Quaternion.identity);
@@ -109,7 +112,7 @@ public class Player : MonoBehaviour
             {
                 gValue = 0;
             }
-
+            Gage.fillAmount = gValue;
         }
 
 

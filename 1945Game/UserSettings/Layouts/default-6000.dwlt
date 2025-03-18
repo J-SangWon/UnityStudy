@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 2560
     height: 1349
   m_ShowMode: 4
-  m_Title: Hierarchy
+  m_Title: Game
   m_RootView: {fileID: 7}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -122,8 +122,8 @@ MonoBehaviour:
     y: 0
     width: 584
     height: 862
-  m_MinSize: {x: 276, y: 76}
-  m_MaxSize: {x: 4001, y: 4026}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
@@ -525,9 +525,9 @@ MonoBehaviour:
       e32: 0
       e33: 1
   m_PreviewAnimator: {fileID: 0}
-  m_AnimatorController: {fileID: 9100000, guid: 3d19c20c980052041b93ca3b679ab9a2, type: 2}
+  m_AnimatorController: {fileID: 9100000, guid: 995a1d1b7d68c4d40b659722017f6e5f, type: 2}
   m_BreadCrumbs:
-  - m_Target: {fileID: 9009065693924958584, guid: 3d19c20c980052041b93ca3b679ab9a2, type: 2}
+  - m_Target: {fileID: -7988911675594027601, guid: 995a1d1b7d68c4d40b659722017f6e5f, type: 2}
     m_ScrollPosition: {x: 0, y: 0}
   stateMachineGraph: {fileID: 0}
   stateMachineGraphGUI: {fileID: 0}
@@ -672,7 +672,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Material
+    - Assets/Script
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -682,16 +682,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Material
+  - Assets/Script
   m_LastFoldersGridSize: 16
   m_LastProjectPath: "C:\\Users\\asdgh\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Study\\UnityStudy\\1945Game"
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 76930000
-    m_LastClickedID: 37750
-    m_ExpandedIDs: 00000000069300000893000000ca9a3bffffff7f
+    m_SelectedIDs: 7c930000
+    m_LastClickedID: 37756
+    m_ExpandedIDs: 0000000006930000089300007293000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -752,18 +752,18 @@ MonoBehaviour:
     m_ExpandedInstanceIDs: c623000010940000ac92000040940000229400002a940000d2b30000fab300008092000000ba0000f6ba0000569200005490000074970000a4a300000000000012ad0000a6950000ae9700004ca00000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: UI
+      m_OriginalName: UI
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 37832
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
       m_TrimLeadingAndTrailingWhitespace: 0
       m_ClientGUIView: {fileID: 13}
@@ -875,7 +875,7 @@ MonoBehaviour:
   m_LastWindowPixelSize: {x: 732, y: 1267}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
-  m_LowResolutionForAspectRatios: 01000000000000000000
+  m_LowResolutionForAspectRatios: 01000001000000000000
   m_XRRenderMode: 0
   m_RenderTexture: {fileID: 0}
   m_showToolbar: 1
@@ -1430,9 +1430,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: 406.82852, y: 703.2853, z: -3.1850817}
+    m_Target: {x: 94.82617, y: 349.48898, z: -5.5657983}
     speed: 2
-    m_Value: {x: 411.71527, y: 695.3095, z: -3.0035381}
+    m_Value: {x: 94.82617, y: 349.48898, z: -5.5657983}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1482,9 +1482,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 421.58566
+    m_Target: 659.65814
     speed: 2
-    m_Value: 403.43124
+    m_Value: 659.65814
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1557,9 +1557,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
-      m_LastClickedID: 0
-      m_ExpandedIDs: 08fbffff6e900000
+      m_SelectedIDs: 46900000
+      m_LastClickedID: 36934
+      m_ExpandedIDs: 94eeffff6ef4ffff46f9ffff02fbffff6e900000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 

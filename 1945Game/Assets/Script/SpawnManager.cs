@@ -30,7 +30,7 @@ public class SpawnManager : MonoBehaviour
         }
 
         TextBossWarning.SetActive(false);
-        PoolManager.Instance.CreatePool(Enemy, 10); 
+        //PoolManager.Instance.CreatePool(Enemy, 10); 
     }
     void Start()
     {
