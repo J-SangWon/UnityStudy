@@ -4,7 +4,7 @@ public class BackGround : MonoBehaviour
 {
     public float scrollSpeed = 0.01f;
     Material material;
-    void Start()
+    void Awake()
     {
         material = GetComponent<Renderer>().material;
     }

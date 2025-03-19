@@ -12,8 +12,14 @@ public class Boss : MonoBehaviour
     public GameObject ms2;
     public Transform pos1;
     public Transform pos2;
+    private void Awake()
+    {
+        //CameraShake.instance.CameraShakeShow();
+
+    }
     void Start()
     {
+
         Invoke("Hide", 2);
         StartCoroutine(BossMissle());
         StartCoroutine(CircleFire());
