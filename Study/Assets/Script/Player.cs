@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Unity.Hierarchy;
 using UnityEditor;
 using UnityEngine;
 
@@ -19,7 +20,21 @@ public class Player : MonoBehaviour
     public GameObject Shadow1;
     List<GameObject> sh = new List<GameObject>();
 
+    //바닥먼지
+    public GameObject Jumpdust;
+
     public GameObject Hit_Lazer;
+
+    //벽점프
+    public Transform wallchk;
+    public float wallchkDistance;
+    public LayerMask wLayer;
+    bool isWall;
+    public float slidingSpeed;
+    public float wallJumpPower;
+    public bool isWallJump;
+    float isRight = 1;
+
     void Start()
     {
         pAni = GetComponent<Animator>();
@@ -149,11 +164,32 @@ public class Player : MonoBehaviour
         Instantiate(Hit_Lazer, transform.position, Quaternion.identity);
     }
 
+    public void RandDust(GameObject dust)
+    {
+        Instantiate(dust, transform.position + new Vector3(-0.2f, -0.4f,0), Quaternion.identity);
+    }
+    public void JumpDust()
+    {
+        Instantiate(Jumpdust, transform.position , Quaternion.identity);
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.blue;
+        Gizmos.DrawRay(wallchk.position, Vector2.right * isRight * wallchkDistance);
+    }
 
     void Update()
     {
-        KeyInput();
-        Move();
+        if (!isWallJump)
+        {
+            KeyInput();
+            Move();
+        }
+
+        //벽 체크
+        isWall = Physics2D.Raycast(wallchk.position, Vector2.right * isRight, wallchkDistance, wLayer);
+        pAni.SetBool("Grab", isWall);
 
         if (Input.GetKeyDown(KeyCode.W))
         {
@@ -161,11 +197,34 @@ public class Player : MonoBehaviour
             {
                 Jump();
                 pAni.SetBool("Jump", true);
-                
+                JumpDust();
             }
         }
 
+        if (isWall)
+        {
+            isWallJump = false;
+            //벽점프상태
+            pRgid2D.linearVelocity = new Vector2(pRgid2D.linearVelocityX, pRgid2D.linearVelocityY * slidingSpeed);
+            if (Input.GetKeyDown(KeyCode.W))
+            {
+                isWallJump = true;
+                //벽점프 먼지
+
+                Invoke("FreezeX", 0.3f);
+                //Velocity를 이용해서 벽점프
+                isRight = -isRight;
+                pRgid2D.linearVelocity = new Vector2(isRight * wallJumpPower, 0.9f * wallJumpPower);
+
+                SP.flipX = SP.flipX == false ? true : false;
+            }
+        }
         
+    }
+
+    void FreezeX()
+    {
+        isWallJump = false;
     }
 
 
