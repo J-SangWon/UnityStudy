@@ -2,6 +2,7 @@
 using Unity.Hierarchy;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -22,6 +23,7 @@ public class Player : MonoBehaviour
 
     //바닥먼지
     public GameObject Jumpdust;
+    public GameObject Jumpdust_Wall;
 
     public GameObject Hit_Lazer;
 
@@ -53,7 +55,7 @@ public class Player : MonoBehaviour
             SP.flipX = true;
             pAni.SetBool("Run", true);
 
-            for(int i = 0; i <sh.Count; i++)
+            for (int i = 0; i < sh.Count; i++)
             {
                 sh[i].GetComponent<SpriteRenderer>().flipX = SP.flipX;
             }
@@ -69,16 +71,16 @@ public class Player : MonoBehaviour
                 sh[i].GetComponent<SpriteRenderer>().flipX = SP.flipX;
             }
         }
-        else if(direction.x == 0)
+        else if (direction.x == 0)
         {
-            pAni.SetBool("Run",false);
+            pAni.SetBool("Run", false);
 
-            for(int i = 0; i < sh.Count; i++)
+            for (int i = 0; i < sh.Count; i++)
             {
                 Destroy(sh[i]); //게임오브젝트 지우기
                 sh.RemoveAt(i); //게임오브젝트 관리하는 리스트 지우기
             }
- 
+
         }
         if (Input.GetMouseButtonDown(0))//0은 좌클릭
         {
@@ -96,11 +98,11 @@ public class Player : MonoBehaviour
     public void Jump()
     {
         pRgid2D.linearVelocity = Vector2.zero;
-        pRgid2D.AddForce(new Vector2(0, JumpUp),ForceMode2D.Impulse);
+        pRgid2D.AddForce(new Vector2(0, JumpUp), ForceMode2D.Impulse);
     }
     private void FixedUpdate()
     {
-        Debug.DrawRay(pRgid2D.position, Vector3.down, new Color(0, 1, 0));
+        Debug.DrawRay(pRgid2D.position, Vector3.down, new Color(0, 0.7f, 0));
 
         //레이캐스트로 땅 체크
         RaycastHit2D rayHit = Physics2D.Raycast(pRgid2D.position, Vector3.down, 1, LayerMask.GetMask("Ground"));
@@ -108,12 +110,24 @@ public class Player : MonoBehaviour
         {
             if (rayHit.collider != null)
             {
-                if(rayHit.distance < 0.7f)
+                if (rayHit.distance < 0.7f)
                 {
-                    pAni.SetBool("Jump",false );
+                    pAni.SetBool("Jump", false);
+                }
+            }
+            else
+            {
+                if (!isWall)
+                {
+                    pAni.SetBool("Jump", true);
+                }
+                else
+                {
+                    pAni.SetBool("Grab", true);
                 }
             }
         }
+
         ////계단 체크
         //RaycastHit2D rayHitStair = Physics2D.Raycast(pRgid2D.position, Vector3.down, 1, LayerMask.GetMask("Stairs"));
         //if (pRgid2D.linearVelocityY < 0)
@@ -133,11 +147,11 @@ public class Player : MonoBehaviour
 
     public void AttackSlash()
     {
-        if(SP.flipX == false)
+        if (SP.flipX == false)
         {
             //플레이어 오른쪽
             pRgid2D.AddForce(Vector2.right * Power, ForceMode2D.Impulse);
-            GameObject go = Instantiate(Slash, transform.position,Quaternion.identity);
+            GameObject go = Instantiate(Slash, transform.position, Quaternion.identity);
             //go.GetComponent<SpriteRenderer>().flipX = SP.flipX;
         }
         else
@@ -166,11 +180,14 @@ public class Player : MonoBehaviour
 
     public void RandDust(GameObject dust)
     {
-        Instantiate(dust, transform.position + new Vector3(-0.2f, -0.4f,0), Quaternion.identity);
+        Instantiate(dust, transform.position + new Vector3(-0.2f, -0.4f, 0), Quaternion.identity);
     }
     public void JumpDust()
     {
-        Instantiate(Jumpdust, transform.position , Quaternion.identity);
+        if (!isWall)
+            Instantiate(Jumpdust, transform.position, Quaternion.identity);
+        else
+            Instantiate(Jumpdust_Wall, transform.position, Quaternion.identity);
     }
 
     private void OnDrawGizmos()
@@ -181,6 +198,17 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        //시간 조절 입력 체크
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            TimeController.Instance.SetSlowMotion(true);
+            
+            //포스트프로세싱 화면효과
+            //TimeController.Instance
+
+
+        }
+
         if (!isWallJump)
         {
             KeyInput();
@@ -210,7 +238,8 @@ public class Player : MonoBehaviour
             {
                 isWallJump = true;
                 //벽점프 먼지
-
+                GameObject go = Instantiate(Jumpdust_Wall, transform.position + new Vector3(0.8f * isRight, 0, 0), Quaternion.identity);
+                go.GetComponent<SpriteRenderer>().flipX = SP.flipX;
                 Invoke("FreezeX", 0.3f);
                 //Velocity를 이용해서 벽점프
                 isRight = -isRight;
@@ -219,12 +248,21 @@ public class Player : MonoBehaviour
                 SP.flipX = SP.flipX == false ? true : false;
             }
         }
-        
+
     }
 
     void FreezeX()
     {
         isWallJump = false;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("BossScene"))
+        {
+            //보스 씬으로 전환
+            SceneManager.LoadScene("Boss");
+        }
     }
 
 
