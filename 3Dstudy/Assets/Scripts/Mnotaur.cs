@@ -1,0 +1,86 @@
+﻿using UnityEngine;
+
+public class Minotaurs : MonoBehaviour
+{
+    public Animator minoAnim;
+    public Transform target;
+    public float minoSpeed;
+    bool enableAct;
+    int atkStep;
+
+
+    void Start()
+    {
+        minoAnim = GetComponent<Animator>();
+        enableAct = true;
+    }
+
+
+    void RotateMino()
+    {
+        Vector3 dir = target.position - transform.position;
+
+        transform.localRotation = Quaternion.Slerp(transform.localRotation, Quaternion.LookRotation(dir), 5 * Time.deltaTime);
+    }
+
+    void MoveMino()
+    {
+        if ((target.position - transform.position).magnitude >= 2)
+        {
+            minoAnim.SetBool("Walk", true);
+            transform.Translate(Vector3.forward * minoSpeed * Time.deltaTime, Space.Self);
+        }
+
+        if ((target.position - transform.position).magnitude < 2)
+        {
+            minoAnim.SetBool("Walk", false);
+        }
+
+    }
+
+
+    void Update()
+    {
+
+        if (enableAct)
+        {
+            RotateMino();
+            MoveMino();
+        }
+    }
+
+    void MinoAtk()
+    {
+        if ((target.position - transform.position).magnitude < 2)
+        {
+            switch (atkStep)
+            {
+                case 0:
+                    atkStep++;
+                    minoAnim.Play("Samurai_Attack_Airborne");
+                    break;
+                case 1:
+                    atkStep++;
+                    minoAnim.Play("attack2");
+                    break;
+                case 2:
+                    atkStep = 0;
+                    minoAnim.Play("attack3");
+                    break;
+            }
+        }
+    }
+
+    void FreezeMino()
+    {
+        enableAct = false;
+    }
+
+
+    void UnFreezeMino()
+    {
+        enableAct = true;
+    }
+
+
+}
