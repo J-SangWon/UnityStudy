@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 public enum AttackState
 {
@@ -9,12 +10,17 @@ public enum AttackState
 }
 public class MeeleFighter : MonoBehaviour
 {
+    [SerializeField] List<AttackData> attacks;
     [SerializeField] GameObject sword;
     BoxCollider swordColider;
+    SphereCollider leftHandCol, rightHandCol, leftFootCol, rightFootCol;
 
     Animator anim;
     public bool inAction { get; private set; } = false;
     AttackState attackState;
+
+    bool doCombo;
+    int comboCount = 0;
 
     private void Awake()
     {
@@ -26,7 +32,46 @@ public class MeeleFighter : MonoBehaviour
         {
             swordColider = sword.GetComponent<BoxCollider>();
             swordColider.enabled = false;
+        }
 
+        leftHandCol = anim.GetBoneTransform(HumanBodyBones.LeftHand).GetComponent<SphereCollider>();
+        rightHandCol = anim.GetBoneTransform(HumanBodyBones.RightHand).GetComponent<SphereCollider>();
+        leftFootCol = anim.GetBoneTransform(HumanBodyBones.LeftFoot).GetComponent<SphereCollider>();
+        rightFootCol = anim.GetBoneTransform(HumanBodyBones.RightFoot).GetComponent<SphereCollider>();
+
+        DisableCol();
+    }
+
+    private void DisableCol()
+    {
+        leftHandCol.enabled = false;
+        rightHandCol.enabled = false;
+        leftFootCol.enabled = false;
+        rightFootCol.enabled = false;
+        swordColider.enabled = false;   
+    }
+
+    void EnableHitBox(AttackData attack)
+    {
+        switch (attack.HitboxToUse)
+        {
+            case AttackHitBox.LeftHand:
+                leftHandCol.enabled = true;
+                break;
+            case AttackHitBox.RightHand:
+                rightHandCol.enabled = true;
+                break;
+            case AttackHitBox.LeftFoot:
+                leftFootCol.enabled = true; 
+                break;
+            case AttackHitBox.RightFoot:
+                rightFootCol.enabled = true;
+                break;
+            case AttackHitBox.Sword:
+                swordColider.enabled = true;
+                break;
+            default:
+                break;
         }
     }
 
@@ -35,6 +80,10 @@ public class MeeleFighter : MonoBehaviour
         if (!inAction)
         {
             StartCoroutine(Attack());
+        }
+        else if (attackState == AttackState.Impact || attackState == AttackState.Cooldown)
+        {
+            doCombo = true;
         }
     }
     IEnumerator PlayHitReaction()
@@ -55,10 +104,7 @@ public class MeeleFighter : MonoBehaviour
 
         attackState = AttackState.Windup;
 
-        float impactStartTime = 0.33f;
-        float impactEndTime = 0.55f;
-
-        anim.CrossFade("Slash", 0.2f);
+        anim.CrossFade(attacks[comboCount].animName, 0.2f);
         yield return null;
 
         var animState = anim.GetNextAnimatorStateInfo(1);
@@ -71,31 +117,40 @@ public class MeeleFighter : MonoBehaviour
             float normalizedTime = timer / animState.length;
             if (attackState == AttackState.Windup)
             {
-                if (normalizedTime >= impactStartTime)
+                if (normalizedTime >= attacks[comboCount].impactStartTime)
                 {
                     attackState = AttackState.Impact;
                     //콜라이더 키고 끄기
-                    swordColider.enabled = true;
+                    //swordColider.enabled = true;
+                    EnableHitBox(attacks[comboCount]);
                 }
-                
+
             }
             else if (attackState == AttackState.Impact)
             {
-                if (normalizedTime >= impactEndTime)
+                if (normalizedTime >= attacks[comboCount].impactEndTime)
                 {
                     attackState = AttackState.Cooldown;
                     //콜라이더 끄기
                     swordColider.enabled = false;
+                    DisableCol();
                 }
             }
             else if (attackState == AttackState.Cooldown)
             {
+                if (doCombo)
+                {
+                    doCombo = false;
 
+                    comboCount = (comboCount + 1) % (attacks.Count);
+
+                    StartCoroutine(Attack());
+                    yield break;
+
+                }
             }
             yield return null;
         }
-
-
 
         attackState = AttackState.Idle;
 

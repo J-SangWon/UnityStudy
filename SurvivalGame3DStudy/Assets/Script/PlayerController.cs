@@ -8,8 +8,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float runSpeed = 10f;
     [SerializeField] float defaultMoveSpeed;
     [SerializeField] float jumpForce = 5f;
-    Rigidbody rb;
-    CapsuleCollider capCol;
     bool isRun;
     bool isCrouch;
     [SerializeField] float crouchSpeed = 2f;
@@ -29,12 +27,18 @@ public class PlayerController : MonoBehaviour
     [SerializeField] LayerMask groundLayer;
     [SerializeField] Vector3 groundCheckOffset;
 
+    [Header("Component")]
+    Rigidbody rb;
+    CapsuleCollider capCol;
+    [SerializeField] GunController GC;
+
     public bool cameraInverteX;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         capCol = GetComponent<CapsuleCollider>();
+        GC = FindAnyObjectByType<GunController>();
 
         //이동
         defaultMoveSpeed = moveSpeed;
@@ -97,6 +101,7 @@ public class PlayerController : MonoBehaviour
         {
             isRun = true;
             moveSpeed = runSpeed;
+            GC.CancleFineSight();
         }
         if (Input.GetKeyUp(KeyCode.LeftShift))
         {
