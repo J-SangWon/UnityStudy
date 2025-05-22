@@ -17,7 +17,7 @@ public class MeeleFighter : MonoBehaviour
 
     Animator anim;
     public bool inAction { get; private set; } = false;
-    AttackState attackState;
+    public AttackState attackState { get; private set; }
 
     bool doCombo;
     int comboCount = 0;
@@ -31,24 +31,30 @@ public class MeeleFighter : MonoBehaviour
         if (sword)
         {
             swordColider = sword.GetComponent<BoxCollider>();
-            swordColider.enabled = false;
+
+            leftHandCol = anim.GetBoneTransform(HumanBodyBones.LeftHand).GetComponent<SphereCollider>();
+            rightHandCol = anim.GetBoneTransform(HumanBodyBones.RightHand).GetComponent<SphereCollider>();
+            leftFootCol = anim.GetBoneTransform(HumanBodyBones.LeftFoot).GetComponent<SphereCollider>();
+            rightFootCol = anim.GetBoneTransform(HumanBodyBones.RightFoot).GetComponent<SphereCollider>();
+            DisableCol();
         }
 
-        leftHandCol = anim.GetBoneTransform(HumanBodyBones.LeftHand).GetComponent<SphereCollider>();
-        rightHandCol = anim.GetBoneTransform(HumanBodyBones.RightHand).GetComponent<SphereCollider>();
-        leftFootCol = anim.GetBoneTransform(HumanBodyBones.LeftFoot).GetComponent<SphereCollider>();
-        rightFootCol = anim.GetBoneTransform(HumanBodyBones.RightFoot).GetComponent<SphereCollider>();
 
-        DisableCol();
+
     }
 
     private void DisableCol()
     {
-        leftHandCol.enabled = false;
-        rightHandCol.enabled = false;
-        leftFootCol.enabled = false;
-        rightFootCol.enabled = false;
-        swordColider.enabled = false;   
+        if (sword)
+            swordColider.enabled = false;
+        if (leftHandCol)
+            leftHandCol.enabled = false;
+        if (rightHandCol)
+            rightHandCol.enabled = false;
+        if (leftFootCol)
+            leftFootCol.enabled = false;
+        if (rightFootCol)
+            rightFootCol.enabled = false;
     }
 
     void EnableHitBox(AttackData attack)
@@ -62,7 +68,7 @@ public class MeeleFighter : MonoBehaviour
                 rightHandCol.enabled = true;
                 break;
             case AttackHitBox.LeftFoot:
-                leftFootCol.enabled = true; 
+                leftFootCol.enabled = true;
                 break;
             case AttackHitBox.RightFoot:
                 rightFootCol.enabled = true;
@@ -93,7 +99,7 @@ public class MeeleFighter : MonoBehaviour
         yield return null;
 
         var animState = anim.GetNextAnimatorStateInfo(1);
-        yield return new WaitForSeconds(animState.length);
+        yield return new WaitForSeconds(animState.length * 0.8f);
 
         inAction = false;
     }
@@ -164,5 +170,7 @@ public class MeeleFighter : MonoBehaviour
             StartCoroutine(PlayHitReaction());
         }
     }
+
+    public List<AttackData> GetAttackDatas => attacks;
 
 }

@@ -46,8 +46,6 @@ public class PlayerController : MonoBehaviour
         float v = Input.GetAxis("Vertical");
 
         GroundCheck();
-        Debug.Log("isGround = " + isGrounded);
-
 
         // 전체 이동량 계산
         float moveAmount = Mathf.Clamp01(Mathf.Abs(h) + Mathf.Abs(v));

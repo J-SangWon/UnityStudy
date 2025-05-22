@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float runSpeed = 10f;
     [SerializeField] float defaultMoveSpeed;
     [SerializeField] float jumpForce = 5f;
+    bool isWalk;
     bool isRun;
     bool isCrouch;
     [SerializeField] float crouchSpeed = 2f;
@@ -31,14 +32,20 @@ public class PlayerController : MonoBehaviour
     Rigidbody rb;
     CapsuleCollider capCol;
     [SerializeField] GunController GC;
+    CrossHair crossHair;
 
     public bool cameraInverteX;
 
+    Vector3 lastPos;
+    float checkTimer;
+    [SerializeField] float walkThreshold = 0.05f; // 이동 감지 기준
+    [SerializeField] float checkInterval = 0.1f;  // 몇 초마다 검사할지
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         capCol = GetComponent<CapsuleCollider>();
         GC = FindAnyObjectByType<GunController>();
+        crossHair = FindAnyObjectByType<CrossHair>();
 
         //이동
         defaultMoveSpeed = moveSpeed;
@@ -58,11 +65,17 @@ public class PlayerController : MonoBehaviour
         Move();
         CameraRotation();
         CharactoerRotation();
+        checkTimer += Time.deltaTime;
+
+        if (checkTimer >= checkInterval)
+        {
+            MoveCheck();
+            checkTimer = 0f;
+        }
     }
 
-    private void Move()
+    void Move()
     {
-
         float moveX = Input.GetAxisRaw("Horizontal");
         float moveZ = Input.GetAxisRaw("Vertical");
 
@@ -73,7 +86,20 @@ public class PlayerController : MonoBehaviour
         rb.MovePosition(rb.position + vel);
 
     }
+    void MoveCheck()
+    {
+        if (!isRun && !isCrouch && isGround)
+        {
+            if (Vector3.Distance(lastPos, transform.position) >= walkThreshold)
+                isWalk = true;
+            else
+                isWalk = false;
 
+            crossHair.WalkingAnimation(isWalk);
+            lastPos = transform.position;
+
+        }
+    }
     void CameraRotation()
     {
         float rotateX = Input.GetAxisRaw("Mouse Y") * lookSensitivity;
@@ -102,17 +128,19 @@ public class PlayerController : MonoBehaviour
             isRun = true;
             moveSpeed = runSpeed;
             GC.CancleFineSight();
+            crossHair.RunningAnimation(isRun);
         }
         if (Input.GetKeyUp(KeyCode.LeftShift))
         {
             isRun = false;
             moveSpeed = defaultMoveSpeed;
+            crossHair.RunningAnimation(isRun);
         }
     }
 
     void Jump()
     {
-        if(Input.GetKeyDown(KeyCode.Space) && isGround)
+        if (Input.GetKeyDown(KeyCode.Space) && isGround)
         {
             rb.linearVelocity = transform.up * jumpForce;
             isCrouch = false;
@@ -122,9 +150,10 @@ public class PlayerController : MonoBehaviour
 
     void Crouch()
     {
-        if(Input.GetKeyDown(KeyCode.LeftControl))
+        if (Input.GetKeyDown(KeyCode.LeftControl))
         {
             isCrouch = !isCrouch;
+            crossHair.CrouchingAnimation(isCrouch);
             if (isCrouch)
             {
                 moveSpeed = crouchSpeed;
@@ -136,12 +165,12 @@ public class PlayerController : MonoBehaviour
                 applyPosY = defaultPosY;
             }
 
-            
+
 
         }
     }
 
-    private void CrouchCamera()
+    void CrouchCamera()
     {
         Vector3 currentPos = playerCamera.transform.localPosition;
         Vector3 targetPos = new Vector3(
@@ -156,7 +185,10 @@ public class PlayerController : MonoBehaviour
     #region Gizmos
     void GroundCheck()
     {
+        bool wasGround = isGround;
         isGround = Physics.CheckSphere(transform.TransformPoint(groundCheckOffset), groundCheck, groundLayer);
+        crossHair.JumpingAnimation(!isGround);
+        
     }
 
     private void OnDrawGizmos()

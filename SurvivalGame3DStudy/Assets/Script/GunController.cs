@@ -3,10 +3,10 @@ using UnityEngine;
 
 public class GunController : MonoBehaviour
 {
-
+    public static bool isActivate = true;
     float currentFireRate;
     bool isReload;
-    bool isFineSightMode;
+    public bool isFineSightMode;
 
     [SerializeField] Gun currentGun;
     AudioSource audioSource;
@@ -15,23 +15,33 @@ public class GunController : MonoBehaviour
     RaycastHit hitInfo;
     [SerializeField] Camera cam;
     [SerializeField] GameObject hitEffect;
+    CrossHair crossHair;
 
     void Start()
     {
+        
         audioSource = GetComponent<AudioSource>();
         originPos = transform.localPosition;
+        crossHair = FindAnyObjectByType<CrossHair>();
+
+        WeaponManager.currentWeapon = currentGun.GetComponent<Transform>();
+        WeaponManager.currentWeaponAnim = currentGun.anim;
     }
 
     void Update()
     {
-        GunFireRateCalc();
+        if (isActivate)
+        {
+            GunFireRateCalc();
 
-        if (!isReload)
-            Fire();
-        if (Input.GetKeyDown(KeyCode.R))
-            TryReload();
-        if (Input.GetButtonDown("Fire2") && !isReload)
-            FineSight();
+            if (!isReload)
+                Fire();
+            if (Input.GetKeyDown(KeyCode.R))
+                TryReload();
+            if (Input.GetButtonDown("Fire2") && !isReload)
+                FineSight();
+
+        }
     }
 
     private void TryReload()
@@ -60,6 +70,7 @@ public class GunController : MonoBehaviour
             PlaySE(currentGun.fire_Sound);
             currentGun.muzzleFlash.Play();
             currentGun.currentBulletCount--;
+            crossHair.FireAnimation();
             //StopCoroutine(nameof(RetroAcitonCouroutine));
             Hit();
             StopAllCoroutines();
@@ -74,7 +85,11 @@ public class GunController : MonoBehaviour
 
     void Hit()
     {
-        if(Physics.Raycast(cam.transform.position, cam.transform.forward, out hitInfo, currentGun.range))
+        if (Physics.Raycast(cam.transform.position, cam.transform.forward +
+            new Vector3(Random.Range(-crossHair.GetAccuracy() - currentGun.accuracy,
+                                      crossHair.GetAccuracy() + currentGun.accuracy),
+                                        0)
+                         , out hitInfo, currentGun.range))
         {
             GameObject clone = Instantiate(hitEffect, hitInfo.point, Quaternion.LookRotation(hitInfo.normal));
 
@@ -107,10 +122,18 @@ public class GunController : MonoBehaviour
         }
         else
         {
-            Debug.Log("총알 없음");
+
         }
         isReload = false;
         yield return null;
+    }
+    public void CancelReload()
+    {
+        if (isReload)
+        {
+            StopAllCoroutines();
+            isReload = false;
+        }
     }
     IEnumerator RetroAcitonCouroutine()
     {
@@ -156,6 +179,7 @@ public class GunController : MonoBehaviour
     void FineSight()
     {
         isFineSightMode = !isFineSightMode;
+        crossHair.FineSightAnimation(isFineSightMode);
         currentGun.anim.SetBool("FineSightMode", isFineSightMode);
 
         StopAllCoroutines();
@@ -205,4 +229,24 @@ public class GunController : MonoBehaviour
     {
         return currentGun;
     }
+
+    public bool GetFineSightMode()
+    {
+        return isFineSightMode;
+    }
+
+    public void GunChange(Gun _gun)
+    {
+        if (WeaponManager.currentWeapon)
+            WeaponManager.currentWeapon.gameObject.SetActive(false);
+
+        currentGun = _gun;
+        WeaponManager.currentWeapon = currentGun.GetComponent<Transform>();
+        WeaponManager.currentWeaponAnim = currentGun.anim;
+
+        currentGun.transform.localPosition = Vector3.zero;
+        currentGun.gameObject.SetActive(true);
+        isActivate = true;
+    }
+
 }

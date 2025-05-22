@@ -7,22 +7,27 @@ public class IdleState : State<EnemyController>
     public override void Enter(EnemyController owner)
     {
         enemy = owner;
-        Debug.Log("IdleEnter");
+  
     }
     public override void Execute()
     {
-        //base.Execute();
-        Debug.Log("IdleExcute");
-        if (Input.GetKeyDown(KeyCode.T)) 
+        foreach(var target in enemy.TargetsInRange)
         {
-            enemy.ChangeState(EnemyStates.Chase);
+            var vecToTarget = target.transform.position - transform.position;
+            float angle = Vector3.Angle(transform.position, vecToTarget);
+
+            if(angle <= enemy.Fov / 2)
+            {
+                enemy.Target = target;
+                enemy.ChangeState(EnemyStates.CombatMovement);
+                break;
+            }
         }
     }
 
     public override void Exit()
     {
-        base.Exit();
-        Debug.Log("IdleExit");
+
     }
 
 }

@@ -1,13 +1,9 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class HandController : MonoBehaviour
+public class HandController : CloseWeaponController
 {
-    [SerializeField] private Hand currentHand;
-    bool isAttack;
-    bool isSwing;
-
-    RaycastHit hitInfo;
+    public static bool isActivate;
 
     void Start()
     {
@@ -16,43 +12,14 @@ public class HandController : MonoBehaviour
 
     void Update()
     {
-        Attack();
-    }
-
-    void Attack()
-    {
-        if (Input.GetButtonDown("Fire1"))
+        if (isActivate)
         {
-            if (!isAttack)
-            {
-                StartCoroutine(AttackDelay());
-            }
+            Attack();
 
         }
+
     }
-
-    IEnumerator AttackDelay()
-    {
-        isAttack = true;
-        currentHand.anim.SetTrigger("Attack");
-        float currentAttackDelay = 0;
-
-        yield return new WaitForSeconds(currentHand.attackDelayA);
-        currentAttackDelay += currentHand.attackDelayA;
-        isSwing = true;
-
-        //공격 활성화 시점
-        StartCoroutine(HitCoroutine());
-
-        yield return new WaitForSeconds(currentHand.attackDelayB);
-        currentAttackDelay += currentHand.attackDelayB;
-        isSwing = false;
-
-        yield return new WaitForSeconds(currentHand.attackDelay - currentAttackDelay);
-        isAttack = false;
-    }
-
-    IEnumerator HitCoroutine()
+    protected override IEnumerator HitCoroutine()
     {
         while (isSwing)
         {
@@ -70,12 +37,10 @@ public class HandController : MonoBehaviour
 
     }
 
-    private bool CheckObject()
+    public override void CloseWeaponChange(CloseWeapon _closeWeapon)
     {
-        if (Physics.Raycast(transform.position, transform.forward, out hitInfo, currentHand.range))
-            return true;
-        else
-            return false;
-    }
+        base.CloseWeaponChange(_closeWeapon);
+        isActivate = true;
 
+    }
 }
