@@ -46,6 +46,8 @@ public class WeaponManager : MonoBehaviour
         {
             pickaxeDict.Add(pickaxe[i].closeWeaponName, pickaxe[i]);
         }
+        WeaponChange(currentWeaponType, "맨손");
+
     }
 
     private void Update()

@@ -43,22 +43,6 @@ public abstract class CloseWeaponController : MonoBehaviour
     }
 
     protected abstract IEnumerator HitCoroutine();
-    //{
-    //    while (isSwing)
-    //    {
-    //        if (CheckObject())
-    //        {
-    //            isSwing = false;
-    //            Debug.Log("Hit : " + hitInfo.transform.name);
-    //            yield return null;
-    //        }
-    //        else
-    //        {
-    //            yield return null;
-    //        }
-    //    }
-
-    //}
 
     protected bool CheckObject()
     {

@@ -10,11 +10,32 @@ public class CombatController : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0))
         {
-            meeleFighter.TryToAttack();
+            var enemy = EnemyManager.instance.GetAttackingEnemy();
+            if (enemy && enemy.fighter.IsCounterable && !meeleFighter.inAction)
+            {
+                StartCoroutine(meeleFighter.PerformCounterAttack(enemy));
+            }
+            else
+            {
+                meeleFighter.TryToAttack();
+            }
+
+
+
+
         }
     }
 
+    //private void OnAnimatorMove()
+    //{
+    //    if (!meeleFighter.InCounter)
+    //    {
+    //        transform.position += anim.deltaPosition;
+    //    }
+
+    //    transform.rotation *= anim.deltaRotation;
+    //}
 
 }

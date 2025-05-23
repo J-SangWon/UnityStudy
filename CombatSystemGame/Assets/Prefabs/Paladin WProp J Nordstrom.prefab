@@ -181,10 +181,13 @@ PrefabInstance:
       addedObject: {fileID: 6547735961605542546}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: e6e64d8c7285e8c409b87f929ae08aff, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 8994406591399511647}
+      addedObject: {fileID: 7384972607973462192}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: e6e64d8c7285e8c409b87f929ae08aff, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8114198385376348770}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: e6e64d8c7285e8c409b87f929ae08aff, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8994406591399511647}
     - targetCorrespondingSourceObject: {fileID: 1051571768989249988, guid: e6e64d8c7285e8c409b87f929ae08aff, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2515907996593588830}
@@ -265,7 +268,8 @@ MonoBehaviour:
   attacks:
   - {fileID: 11400000, guid: d9f2f6b67e8c269459503f16062e7fab, type: 2}
   - {fileID: 11400000, guid: 73fb07667d911724f9a188b7783dbfb8, type: 2}
-  sword: {fileID: 7977568914147038966, guid: a0ace25c6aeccb94fb639385f73743da, type: 3}
+  - {fileID: 11400000, guid: be5d5a5422250b34fa7660bb0a6de2eb, type: 2}
+  sword: {fileID: 6461989459798488930}
 --- !u!114 &8115518761269212657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -322,6 +326,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackDistance: 1
+--- !u!114 &7384972607973462192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1668185284264576912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 285e5d8c6e143494ebd8ff95cec6cbca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8114198385376348770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1668185284264576912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bf6c6ed1de80f148b237a43cf087727, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backwardWalkSpeed: 1.5
+  distanceToRetreat: 3
+  rotateSpeed: 500
 --- !u!195 &8994406591399511647
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -344,21 +375,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &8114198385376348770
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1668185284264576912}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2bf6c6ed1de80f148b237a43cf087727, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  backwardWalkSpeed: 1
-  distanceToRetreat: 3
-  rotateSpeed: 500
 --- !u!4 &2048369279923887402 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: e6e64d8c7285e8c409b87f929ae08aff, type: 3}
@@ -424,5 +440,10 @@ PrefabInstance:
 --- !u!4 &1149753697212710519 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4102536687139921891, guid: a0ace25c6aeccb94fb639385f73743da, type: 3}
+  m_PrefabInstance: {fileID: 3970940687380488596}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6461989459798488930 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7977568914147038966, guid: a0ace25c6aeccb94fb639385f73743da, type: 3}
   m_PrefabInstance: {fileID: 3970940687380488596}
   m_PrefabAsset: {fileID: 0}

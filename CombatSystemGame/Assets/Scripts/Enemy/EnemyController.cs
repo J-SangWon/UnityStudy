@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-public enum EnemyStates { Idle, CombatMovement, Attack, RetreatAfterAttack }
+public enum EnemyStates { Idle, CombatMovement, Attack, RetreatAfterAttack, Dead }
 
 public class EnemyController : MonoBehaviour
 {
@@ -15,6 +15,8 @@ public class EnemyController : MonoBehaviour
     public NavMeshAgent NavAgent { get; private set; }
     public Animator anim {  get; private set; }
     public MeeleFighter fighter { get; private set; }
+    public VisionSensor visionSensor { get; set; }
+    public CharacterController characterController { get; private set; }
     Vector3 prevPos;
 
     private void Start()
@@ -28,6 +30,7 @@ public class EnemyController : MonoBehaviour
         stateDict[EnemyStates.CombatMovement] = GetComponent<CombatMovementState>();
         stateDict[EnemyStates.Attack] = GetComponent<EnemyAttackState>();
         stateDict[EnemyStates.RetreatAfterAttack] = GetComponent<RetreatAfterAttackState>();
+        stateDict[EnemyStates.Dead] = GetComponent<DeadState>();
 
 
         StateMachine = new StateMachine<EnemyController>(this);
@@ -61,6 +64,7 @@ public class EnemyController : MonoBehaviour
 
         prevPos = transform.position;
     }
+
 
 
 }

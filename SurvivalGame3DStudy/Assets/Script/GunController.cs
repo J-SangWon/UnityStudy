@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class GunController : MonoBehaviour
 {
-    public static bool isActivate = true;
+    public static bool isActivate;
     float currentFireRate;
     bool isReload;
     public bool isFineSightMode;

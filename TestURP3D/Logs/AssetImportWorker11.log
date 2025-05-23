@@ -1,0 +1,618 @@
+Using pre-set license
+Built from '6000.0/staging' branch; Version is '6000.0.40f1 (157d81624ddf) revision 1408385'; Using compiler version '193933523'; Build Type 'Release'
+OS: 'Windows 11  (10.0.26100) 64bit Professional' Language: 'ko' Physical Memory: 32397 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\6000.0.40f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker11
+-projectPath
+C:/Users/asdgh/OneDrive/바탕 화면/Study/UnityStudy/TestURP3D
+-logFile
+Logs/AssetImportWorker11.log
+-srvPort
+53361
+-job-worker-count
+5
+-background-job-worker-count
+8
+-gc-helper-count
+1
+Successfully changed project path to: C:/Users/asdgh/OneDrive/바탕 화면/Study/UnityStudy/TestURP3D
+C:/Users/asdgh/OneDrive/바탕 화면/Study/UnityStudy/TestURP3D
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Player connection [20568]  Target information:
+
+Player connection [20568]  * "[IP] 221.156.243.97 [Port] 0 [Flags] 2 [Guid] 2532772721 [EditorId] 2532772721 [Version] 1048832 [Id] WindowsEditor(7,SangWon) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [20568] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [20568] Host joined alternative multi-casting on [225.0.0.222:34997]...
+JobSystem: Creating JobQueue using job-worker-count value 5
+Input System module state changed to: Initialized.
+[Physics::Module] Initialized fallback backend.
+[Physics::Module] Id: 0xdecafbad
+Library Redirect Path: Library/
+[Physics::Module] Selected backend.
+[Physics::Module] Name: PhysX
+[Physics::Module] Id: 0xf2b8ea05
+[Physics::Module] SDK Version: 4.1.2
+[Physics::Module] Integration Version: 1.0.0
+[Physics::Module] Threading Mode: Multi-Threaded
+Refreshing native plugins compatible for Editor in 9.67 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 6000.0.40f1 (157d81624ddf)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.0.40f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/asdgh/OneDrive/바탕 화면/Study/UnityStudy/TestURP3D/Assets
+GfxDevice: creating device client; kGfxThreadingModeNonThreaded
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce RTX 4060 Ti (ID=0x2803)
+    Vendor:   NVIDIA
+    VRAM:     7949 MB
+    Driver:   32.0.15.6636
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.0.40f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.0.40f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.0.40f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56180
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.0.40f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.0.40f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.0.40f1/Editor/Data/PlaybackEngines/MetroSupport/UnityEditor.UWP.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.0.40f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+Registered in 0.007798 seconds.
+- Loaded All Assemblies, in  0.538 seconds
+Native extension for Android target not found
+Android Extension - Scanning For ADB Devices 685 ms
+Native extension for UWP target not found
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.246 seconds
+Domain Reload Profiling: 1782ms
+	BeginReloadAssembly (174ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (0ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (1ms)
+	RebuildCommonClasses (52ms)
+	RebuildNativeTypeToScriptingClass (13ms)
+	initialDomainReloadingComplete (59ms)
+	LoadAllAssembliesAndSetupDomain (237ms)
+		LoadAssemblies (172ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (233ms)
+			TypeCache.Refresh (229ms)
+				TypeCache.ScanAssembly (213ms)
+			BuildScriptInfoCaches (0ms)
+			ResolveRequiredComponents (1ms)
+	FinalizeReload (1247ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (1166ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (817ms)
+			SetLoadedEditorAssemblies (5ms)
+			BeforeProcessingInitializeOnLoad (67ms)
+			ProcessInitializeOnLoadAttributes (197ms)
+			ProcessInitializeOnLoadMethodAttributes (79ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (0ms)
+========================================================================
+Worker process is ready to serve import requests
+Import Worker Mode flag is 0x00
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  1.472 seconds
+Refreshing native plugins compatible for Editor in 1.32 ms, found 3 plugins.
+Native extension for Android target not found
+Native extension for UWP target not found
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.913 seconds
+Domain Reload Profiling: 2378ms
+	BeginReloadAssembly (215ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (6ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (45ms)
+	RebuildCommonClasses (57ms)
+	RebuildNativeTypeToScriptingClass (15ms)
+	initialDomainReloadingComplete (56ms)
+	LoadAllAssembliesAndSetupDomain (1122ms)
+		LoadAssemblies (881ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (366ms)
+			TypeCache.Refresh (296ms)
+				TypeCache.ScanAssembly (278ms)
+			BuildScriptInfoCaches (57ms)
+			ResolveRequiredComponents (10ms)
+	FinalizeReload (914ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (677ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (10ms)
+			SetLoadedEditorAssemblies (4ms)
+			BeforeProcessingInitializeOnLoad (107ms)
+			ProcessInitializeOnLoadAttributes (468ms)
+			ProcessInitializeOnLoadMethodAttributes (82ms)
+			AfterProcessingInitializeOnLoad (5ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (6ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.01 seconds
+Refreshing native plugins compatible for Editor in 2.25 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 198 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 5974 unused Assets / (3.4 MB). Loaded Objects now: 6619.
+Memory consumption went from 160.4 MB to 157.1 MB.
+Total: 21.794900 ms (FindLiveObjects: 4.443400 ms CreateObjectMapping: 0.977400 ms MarkObjects: 11.805300 ms  DeleteObjects: 4.567500 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 5270.047237 seconds.
+  path: Assets/VarcanRex/LongSword/Meshes/LongSword.obj
+  artifactKey: Guid(9c9f65c1284b22247bafd1ebc8dbb632) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/VarcanRex/LongSword/Meshes/LongSword.obj using Guid(9c9f65c1284b22247bafd1ebc8dbb632) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: 'c5aee2b8b88c33769d24e63af1ed0929') in 0.2249729 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
+
+========================================================================
+Received Import Request.
+  Time since last request: 48.663245 seconds.
+  path: Assets/MotionPath_MeshMaker
+  artifactKey: Guid(5a9cc38c17a08ca419e31f97b55b59ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/MotionPath_MeshMaker using Guid(5a9cc38c17a08ca419e31f97b55b59ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '5bad443afb3ea5bb55fc337aa37a5d0a') in 0.0006639 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 64.920169 seconds.
+  path: Assets/Erika Archer.fbx
+  artifactKey: Guid(c12b27fafdd740b47b85c2a199f52258) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Erika Archer.fbx using Guid(c12b27fafdd740b47b85c2a199f52258) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '3876b6bc780b1fbbc658213aefc15401') in 0.5108779 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 168
+
+========================================================================
+Received Import Request.
+  Time since last request: 17.025454 seconds.
+  path: Assets/Erika Archer@Sword And Shield Slash.fbx
+  artifactKey: Guid(49eb9b83716dd0149bd4410f65ec774d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Erika Archer@Sword And Shield Slash.fbx using Guid(49eb9b83716dd0149bd4410f65ec774d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '3a8eb3262bc50289c0e9777bb3e96710') in 0.0032283 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 139
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.103428 seconds.
+  path: Assets/Erika Archer.fbx
+  artifactKey: Guid(c12b27fafdd740b47b85c2a199f52258) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Erika Archer.fbx using Guid(c12b27fafdd740b47b85c2a199f52258) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '0bf674fa00d43f3f75cb9d74310ef538') in 0.0759464 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 166
+
+========================================================================
+Received Import Request.
+  Time since last request: 9.862620 seconds.
+  path: Assets/a
+  artifactKey: Guid(09a4166b09b647d4faa0bd11bcb3dbcb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/a using Guid(09a4166b09b647d4faa0bd11bcb3dbcb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '44ed338b3de0bfb6c3efe7e4de5b5cd2') in 0.0007355 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 9.743027 seconds.
+  path: Assets/VarcanRex/LongSword/Meshes/LongSword.obj
+  artifactKey: Guid(9c9f65c1284b22247bafd1ebc8dbb632) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/VarcanRex/LongSword/Meshes/LongSword.obj using Guid(9c9f65c1284b22247bafd1ebc8dbb632) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd5c3f3ac8f7550068d84d589763ef27c') in 0.0520335 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.349961 seconds.
+  path: Assets/VarcanRex/LongSword/Meshes/LongSword.obj
+  artifactKey: Guid(9c9f65c1284b22247bafd1ebc8dbb632) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/VarcanRex/LongSword/Meshes/LongSword.obj using Guid(9c9f65c1284b22247bafd1ebc8dbb632) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '108f09e51d4fd767b4e547a0abfd4d9c') in 0.0206227 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.946658 seconds.
+  path: Assets/VarcanRex/LongSword/Meshes/LongSwordMeshMat.mat
+  artifactKey: Guid(ad2eebfe7b0c33d469393dfad020b63c) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/VarcanRex/LongSword/Meshes/LongSwordMeshMat.mat using Guid(ad2eebfe7b0c33d469393dfad020b63c) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: '883658b06eb1e02e8ab81e1907307956') in 0.0136081 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 10.798186 seconds.
+  path: Assets/VarcanRex/LongSword/Materials
+  artifactKey: Guid(e93caf213c9c9dd4f9f5483ab69d597a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/VarcanRex/LongSword/Materials using Guid(e93caf213c9c9dd4f9f5483ab69d597a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '6ebdeaea5d36f298fed7f42c65aca182') in 0.0005387 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 14.818276 seconds.
+  path: Assets/VarcanRex/LongSword/Scenes
+  artifactKey: Guid(f9566db13997bb548bb1493e8c290cc7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/VarcanRex/LongSword/Scenes using Guid(f9566db13997bb548bb1493e8c290cc7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f32aa7e5a3ab8fc12750f17fb95a7016') in 0.0006533 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.133166 seconds.
+  path: Assets/VarcanRex/LongSword/Scenes/LongSword.unity
+  artifactKey: Guid(864831e92ae7f8f4fa7ca4e249443a27) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/VarcanRex/LongSword/Scenes/LongSword.unity using Guid(864831e92ae7f8f4fa7ca4e249443a27) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '2d0c7edcb6a81ccede8cd048d2e509fd') in 0.00072 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.315051 seconds.
+  path: Assets/VarcanRex/LongSword/Scripts
+  artifactKey: Guid(6fee577a9245c9b468d2ad7d8872edc2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/VarcanRex/LongSword/Scripts using Guid(6fee577a9245c9b468d2ad7d8872edc2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '766664dabc50436da32701053e2b963d') in 0.0005779 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.212050 seconds.
+  path: Assets/VarcanRex/LongSword/Textures
+  artifactKey: Guid(8f0a07cb1aca3bb4ba748c6ae91713ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/VarcanRex/LongSword/Textures using Guid(8f0a07cb1aca3bb4ba748c6ae91713ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '03f805d21daf4a1ead7bf4b4e7f9a1f5') in 0.0005176 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 876.603729 seconds.
+  path: Assets/MotionPath_MeshMaker/New Material.mat
+  artifactKey: Guid(d6a42cb0a881a274d95f5f69dcda6edf) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/MotionPath_MeshMaker/New Material.mat using Guid(d6a42cb0a881a274d95f5f69dcda6edf) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: '88eb2785c6dac2d4faedd9179e9fbbf2') in 0.0161515 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.420784 seconds.
+  path: Assets/MotionPath_MeshMaker/FX_Shader_UVChecker.shadergraph
+  artifactKey: Guid(4a6afc82a6114054b98e081772f1369f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/MotionPath_MeshMaker/FX_Shader_UVChecker.shadergraph using Guid(4a6afc82a6114054b98e081772f1369f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a0cd17dda9b42a190fc0eb43814f1cff') in 0.3682566 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 6
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.301319 seconds.
+  path: Assets/MotionPath_MeshMaker/MotionPath.cs
+  artifactKey: Guid(07d2200cdaa82a147a99f3648e0cef27) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/MotionPath_MeshMaker/MotionPath.cs using Guid(07d2200cdaa82a147a99f3648e0cef27) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ee35833da8443a9c5fd0705ae9425f52') in 0.0008079 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.208397 seconds.
+  path: Assets/MotionPath_MeshMaker/Shader Graphs_UVChecker_FX_Shader_UVChecker.mat
+  artifactKey: Guid(7e7dc42956f25f246a1d9b23efa6e0f2) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/MotionPath_MeshMaker/Shader Graphs_UVChecker_FX_Shader_UVChecker.mat using Guid(7e7dc42956f25f246a1d9b23efa6e0f2) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: '0eb41a6b2081a825ff3eea9c631f19d3') in 0.0158714 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 7
+
+========================================================================
+Received Import Request.
+  Time since last request: 64.169925 seconds.
+  path: Assets/MotionPath_MeshMaker/FX_Mesh_MotionPath.asset
+  artifactKey: Guid(0676b11d4399f234ab36cc3f287cd0ce) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/MotionPath_MeshMaker/FX_Mesh_MotionPath.asset using Guid(0676b11d4399f234ab36cc3f287cd0ce) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: '61dccdb3a3da8fa4c135e83a34337a75') in 0.0137492 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.304900 seconds.
+  path: Assets/MotionPath_MeshMaker/FX_Mesh_MotionPath.asset
+  artifactKey: Guid(0676b11d4399f234ab36cc3f287cd0ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/MotionPath_MeshMaker/FX_Mesh_MotionPath.asset using Guid(0676b11d4399f234ab36cc3f287cd0ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '73008bdf86483b8db7408ff630f3488c') in 0.0142793 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.684 seconds
+Refreshing native plugins compatible for Editor in 1.04 ms, found 3 plugins.
+Native extension for Android target not found
+Native extension for UWP target not found
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.781 seconds
+Domain Reload Profiling: 1463ms
+	BeginReloadAssembly (223ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (17ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (86ms)
+	RebuildCommonClasses (36ms)
+	RebuildNativeTypeToScriptingClass (14ms)
+	initialDomainReloadingComplete (25ms)
+	LoadAllAssembliesAndSetupDomain (384ms)
+		LoadAssemblies (308ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (155ms)
+			TypeCache.Refresh (5ms)
+				TypeCache.ScanAssembly (0ms)
+			BuildScriptInfoCaches (137ms)
+			ResolveRequiredComponents (9ms)
+	FinalizeReload (781ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (589ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (12ms)
+			SetLoadedEditorAssemblies (6ms)
+			BeforeProcessingInitializeOnLoad (112ms)
+			ProcessInitializeOnLoadAttributes (409ms)
+			ProcessInitializeOnLoadMethodAttributes (43ms)
+			AfterProcessingInitializeOnLoad (7ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (10ms)
+Refreshing native plugins compatible for Editor in 1.38 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 46 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 5970 unused Assets / (5.0 MB). Loaded Objects now: 6706.
+Memory consumption went from 169.1 MB to 164.1 MB.
+Total: 14.004200 ms (FindLiveObjects: 1.214200 ms CreateObjectMapping: 0.583800 ms MarkObjects: 7.914300 ms  DeleteObjects: 4.290700 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 1341.479913 seconds.
+  path: Assets/Scenes/SampleScene.unity
+  artifactKey: Guid(99c9720ab356a0642a771bea13969a05) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/Scenes/SampleScene.unity using Guid(99c9720ab356a0642a771bea13969a05) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: 'a0deb6f1aa2837f49daf6b4945d3d2af') in 0.1354535 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/MotionPath_MeshMaker/FX_Mesh_MotionPath.asset
+  artifactKey: Guid(0676b11d4399f234ab36cc3f287cd0ce) Importer(2089858483,3d70f49cd1c2eb9ae422958d1c652c6b)
+Start importing Assets/MotionPath_MeshMaker/FX_Mesh_MotionPath.asset using Guid(0676b11d4399f234ab36cc3f287cd0ce) Importer(2089858483,3d70f49cd1c2eb9ae422958d1c652c6b) (ScriptedImporter) -> (artifact id: '68933495347220b0fb6f7b70f77358e6') in 0.0122477 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Scenes/SampleScene.unity
+  artifactKey: Guid(99c9720ab356a0642a771bea13969a05) Importer(2089858483,3d70f49cd1c2eb9ae422958d1c652c6b)
+Start importing Assets/Scenes/SampleScene.unity using Guid(99c9720ab356a0642a771bea13969a05) Importer(2089858483,3d70f49cd1c2eb9ae422958d1c652c6b) (ScriptedImporter)Opening scene 'Assets/Scenes/SampleScene.unity additively'
+UnityException: RandomRangeInt is not allowed to be called during serialization, call it from Awake or Start instead. Called from MonoBehaviour 'MotionPath' on game object 'MotionPath'.
+See "Script Serialization" page in the Unity Manual for further details.
+  at (wrapper managed-to-native) UnityEngine.Random.RandomRangeInt(int,int)
+  at UnityEngine.Random.Range (System.Int32 minInclusive, System.Int32 maxExclusive) [0x00001] in <2431722e3e3e41d78b6718bb39ab9111>:0 
+  at MotionPath.GetRandomColor_HighSaturation () [0x00008] in C:\Users\asdgh\OneDrive\바탕 화면\Study\UnityStudy\TestURP3D\Assets\MotionPath_MeshMaker\MotionPath.cs:75 
+  at MotionPath+PathInfoData..ctor () [0x0001b] in C:\Users\asdgh\OneDrive\바탕 화면\Study\UnityStudy\TestURP3D\Assets\MotionPath_MeshMaker\MotionPath.cs:41 
+
+(Filename: Assets/MotionPath_MeshMaker/MotionPath.cs Line: 75)
+
+UnityException: RandomRangeInt is not allowed to be called during serialization, call it from Awake or Start instead. Called from MonoBehaviour 'MotionPath' on game object 'MotionPath'.
+See "Script Serialization" page in the Unity Manual for further details.
+  at (wrapper managed-to-native) UnityEngine.Random.RandomRangeInt(int,int)
+  at UnityEngine.Random.Range (System.Int32 minInclusive, System.Int32 maxExclusive) [0x00001] in <2431722e3e3e41d78b6718bb39ab9111>:0 
+  at MotionPath.GetRandomColor_HighSaturation () [0x00008] in C:\Users\asdgh\OneDrive\바탕 화면\Study\UnityStudy\TestURP3D\Assets\MotionPath_MeshMaker\MotionPath.cs:75 
+  at MotionPath+PathInfoData..ctor () [0x0001b] in C:\Users\asdgh\OneDrive\바탕 화면\Study\UnityStudy\TestURP3D\Assets\MotionPath_MeshMaker\MotionPath.cs:41 
+
+(Filename: Assets/MotionPath_MeshMaker/MotionPath.cs Line: 75)
+
+최초 생성합니다.(패스2개)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+MotionPath:Awake () (at Assets/MotionPath_MeshMaker/MotionPath.cs:109)
+UnityEditor.SceneManagement.EditorSceneManager:OpenScene (string,UnityEditor.SceneManagement.OpenSceneMode)
+UnityEditor.Search.AssetIndexer:IndexScene (string,bool)
+UnityEditor.Search.AssetIndexer:IndexSceneDocument (string,bool)
+UnityEditor.Search.AssetIndexer:IndexDocument (string,bool)
+UnityEditor.Search.SearchIndexEntryImporter:OnImportAsset (UnityEditor.AssetImporters.AssetImportContext)
+UnityEditor.AssetImporters.ScriptedImporter:GenerateAssetData (UnityEditor.AssetImporters.AssetImportContext)
+
+(Filename: Assets/MotionPath_MeshMaker/MotionPath.cs Line: 109)
+
+Loaded scene 'Assets/Scenes/SampleScene.unity'
+	Deserialize:            9.672 ms
+	Integration:            11.792 ms
+	Integration of assets:  0.300 ms
+	Thread Wait Time:       0.018 ms
+	Total Operation Time:   21.782 ms
+ -> (artifact id: '5f791aadafdc1e58234a7da34d5f6e82') in 0.0628653 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 177
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.401803 seconds.
+  path: Assets/VarcanRex/LongSword/Materials/Plane.mat
+  artifactKey: Guid(dd233813ba7c36c4ab4dd35d9ba9f47d) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/VarcanRex/LongSword/Materials/Plane.mat using Guid(dd233813ba7c36c4ab4dd35d9ba9f47d) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: '091282c432e0568f6b4a5f4fe383ccb2') in 0.0504297 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/VarcanRex/LongSword/Materials/LongSword.mat
+  artifactKey: Guid(d74c845b50fe2d143a78ac219b3efc08) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/VarcanRex/LongSword/Materials/LongSword.mat using Guid(d74c845b50fe2d143a78ac219b3efc08) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: 'f49595b13ce66dc8f014a6aba6659215') in 0.0310956 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 5
+
+========================================================================
+Received Import Request.
+  Time since last request: 28.999038 seconds.
+  path: Assets/VarcanRex/LongSword/Materials/LongSword.mat
+  artifactKey: Guid(d74c845b50fe2d143a78ac219b3efc08) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/VarcanRex/LongSword/Materials/LongSword.mat using Guid(d74c845b50fe2d143a78ac219b3efc08) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: '8849d82020968f4e326439c6ae7882d2') in 0.0237406 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 5
+
+========================================================================
+Received Import Request.
+  Time since last request: 31.579356 seconds.
+  path: Assets/VarcanRex/LongSword/Materials/LongSword.mat
+  artifactKey: Guid(d74c845b50fe2d143a78ac219b3efc08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/VarcanRex/LongSword/Materials/LongSword.mat using Guid(d74c845b50fe2d143a78ac219b3efc08) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b302d99fbea2049a466b9455d1b18dc0') in 1.9471967 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 6
+
+========================================================================
+Received Import Request.
+  Time since last request: 52.236177 seconds.
+  path: Assets/MotionPath_MeshMaker/FX_Mesh_MotionPath.asset
+  artifactKey: Guid(0676b11d4399f234ab36cc3f287cd0ce) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/MotionPath_MeshMaker/FX_Mesh_MotionPath.asset using Guid(0676b11d4399f234ab36cc3f287cd0ce) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: '685fcd61feeb2f57a3e9dcafaf1348b7') in 0.013687 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 10.288584 seconds.
+  path: Assets/MotionPath_MeshMaker/FX_Mesh_MotionPath.asset
+  artifactKey: Guid(0676b11d4399f234ab36cc3f287cd0ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/MotionPath_MeshMaker/FX_Mesh_MotionPath.asset using Guid(0676b11d4399f234ab36cc3f287cd0ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '0234567d7e4900c478dcdf6d353d3632') in 0.0222553 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.711 seconds
+Refreshing native plugins compatible for Editor in 1.08 ms, found 3 plugins.
+Native extension for Android target not found
+Native extension for UWP target not found
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.737 seconds
+Domain Reload Profiling: 1447ms
+	BeginReloadAssembly (231ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (19ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (83ms)
+	RebuildCommonClasses (36ms)
+	RebuildNativeTypeToScriptingClass (11ms)
+	initialDomainReloadingComplete (24ms)
+	LoadAllAssembliesAndSetupDomain (408ms)
+		LoadAssemblies (320ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (178ms)
+			TypeCache.Refresh (9ms)
+				TypeCache.ScanAssembly (0ms)
+			BuildScriptInfoCaches (156ms)
+			ResolveRequiredComponents (10ms)
+	FinalizeReload (737ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (581ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (11ms)
+			SetLoadedEditorAssemblies (4ms)
+			BeforeProcessingInitializeOnLoad (94ms)
+			ProcessInitializeOnLoadAttributes (428ms)
+			ProcessInitializeOnLoadMethodAttributes (40ms)
+			AfterProcessingInitializeOnLoad (4ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (13ms)
+Refreshing native plugins compatible for Editor in 1.21 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 35 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 5981 unused Assets / (5.6 MB). Loaded Objects now: 6740.
+Memory consumption went from 171.5 MB to 165.9 MB.
+Total: 10.916300 ms (FindLiveObjects: 0.903800 ms CreateObjectMapping: 0.293600 ms MarkObjects: 5.646700 ms  DeleteObjects: 4.071100 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 165.381808 seconds.
+  path: Assets/OrdosFX
+  artifactKey: Guid(0c9215bb291bac145bc79977300e33e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/OrdosFX using Guid(0c9215bb291bac145bc79977300e33e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '1b6424bbe85f1abff9a055d4bea42b44') in 0.0044499 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.393223 seconds.
+  path: Assets/Scenes
+  artifactKey: Guid(9c53962885c2c4f449125a979d6ad240) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes using Guid(9c53962885c2c4f449125a979d6ad240) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd65b75f456837a3494a5e6e744543932') in 0.0007102 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.202667 seconds.
+  path: Assets/TutorialInfo
+  artifactKey: Guid(ba062aa6c92b140379dbc06b43dd3b9b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TutorialInfo using Guid(ba062aa6c92b140379dbc06b43dd3b9b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'bd0ce3b9fb2b0078fcd59af112aef3b6') in 0.0007029 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.034105 seconds.
+  path: Assets/Erika Archer.controller
+  artifactKey: Guid(54837d57ebd83d240b7451e1ecc21efd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Erika Archer.controller using Guid(54837d57ebd83d240b7451e1ecc21efd) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '43ca618c64dd1ba0ff5739ca1d9eb5a9') in 0.0116938 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 4
+
+========================================================================
+Received Import Request.
+  Time since last request: 39.249274 seconds.
+  path: Assets/OrdosFX/Magic Slashes FX
+  artifactKey: Guid(290e346ae385a5a48aa065ccf24fe245) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/OrdosFX/Magic Slashes FX using Guid(290e346ae385a5a48aa065ccf24fe245) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e8b4734376f66d4e04a2539bd1aca2c3') in 0.0007615 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.164201 seconds.
+  path: Assets/OrdosFX/Magic Slashes FX/Materials
+  artifactKey: Guid(616724bd37e550e46a65038c9a4d01ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/OrdosFX/Magic Slashes FX/Materials using Guid(616724bd37e550e46a65038c9a4d01ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'cc46f181f72f0b61031a80162d0deec9') in 0.0005238 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+

@@ -15,9 +15,11 @@ public class MeeleFighter : MonoBehaviour
     BoxCollider swordColider;
     SphereCollider leftHandCol, rightHandCol, leftFootCol, rightFootCol;
 
-    Animator anim;
+    public Animator anim;
     public bool inAction { get; private set; } = false;
     public AttackState attackState { get; private set; }
+
+    public bool InCounter;
 
     bool doCombo;
     int comboCount = 0;
@@ -102,6 +104,32 @@ public class MeeleFighter : MonoBehaviour
         yield return new WaitForSeconds(animState.length * 0.8f);
 
         inAction = false;
+    }    
+    public IEnumerator PerformCounterAttack(EnemyController opponent)
+    {
+        inAction = true;
+
+        InCounter = true;
+        opponent.fighter.InCounter = true;
+
+        var dispVec = opponent.transform.position - transform.position;
+        dispVec.y = 0f;
+        transform.rotation = Quaternion.LookRotation(dispVec);
+        opponent.transform.rotation = Quaternion.LookRotation(-dispVec);
+
+        anim.CrossFade("CounterAttack", 0.2f);
+        opponent.anim.CrossFade("CounterAttackVictim", 0.2f);
+        opponent.ChangeState(EnemyStates.Dead);
+
+        yield return null;
+
+        var animState = anim.GetNextAnimatorStateInfo(1);
+        yield return new WaitForSeconds(animState.length * 0.8f);
+
+        InCounter = false;
+        opponent.fighter.InCounter = false;
+
+        inAction = false;
     }
 
     IEnumerator Attack()
@@ -123,6 +151,7 @@ public class MeeleFighter : MonoBehaviour
             float normalizedTime = timer / animState.length;
             if (attackState == AttackState.Windup)
             {
+                if (InCounter) break;
                 if (normalizedTime >= attacks[comboCount].impactStartTime)
                 {
                     attackState = AttackState.Impact;
@@ -172,5 +201,7 @@ public class MeeleFighter : MonoBehaviour
     }
 
     public List<AttackData> GetAttackDatas => attacks;
+
+    public bool IsCounterable => attackState == AttackState.Windup && comboCount == 0;
 
 }
