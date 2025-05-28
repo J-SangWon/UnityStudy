@@ -1,6 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
+
 public enum AttackState
 {
     Idle,
@@ -8,12 +11,14 @@ public enum AttackState
     Impact,
     Cooldown
 }
+
 public class MeeleFighter : MonoBehaviour
 {
-    [SerializeField] List<AttackData> attacks;
-    [SerializeField] GameObject sword;
-    BoxCollider swordColider;
-    SphereCollider leftHandCol, rightHandCol, leftFootCol, rightFootCol;
+    [SerializeField] private List<AttackData> attacks;
+    [SerializeField] private GameObject sword;
+    [SerializeField] private float rotationSpeed = 500;
+    private BoxCollider swordColider;
+    private SphereCollider leftHandCol, rightHandCol, leftFootCol, rightFootCol;
 
     public Animator anim;
     public bool inAction { get; private set; } = false;
@@ -21,13 +26,17 @@ public class MeeleFighter : MonoBehaviour
 
     public bool InCounter;
 
-    bool doCombo;
-    int comboCount = 0;
+    private bool doCombo;
+    private int comboCount = 0;
+
+    public event Action OnGoHit;
+    public event Action OnHitComplete;
 
     private void Awake()
     {
         anim = GetComponent<Animator>();
     }
+
     private void Start()
     {
         if (sword)
@@ -40,9 +49,6 @@ public class MeeleFighter : MonoBehaviour
             rightFootCol = anim.GetBoneTransform(HumanBodyBones.RightFoot).GetComponent<SphereCollider>();
             DisableCol();
         }
-
-
-
     }
 
     private void DisableCol()
@@ -59,25 +65,30 @@ public class MeeleFighter : MonoBehaviour
             rightFootCol.enabled = false;
     }
 
-    void EnableHitBox(AttackData attack)
+    private void EnableHitBox(AttackData attack)
     {
         switch (attack.HitboxToUse)
         {
             case AttackHitBox.LeftHand:
                 leftHandCol.enabled = true;
                 break;
+
             case AttackHitBox.RightHand:
                 rightHandCol.enabled = true;
                 break;
+
             case AttackHitBox.LeftFoot:
                 leftFootCol.enabled = true;
                 break;
+
             case AttackHitBox.RightFoot:
                 rightFootCol.enabled = true;
                 break;
+
             case AttackHitBox.Sword:
                 swordColider.enabled = true;
                 break;
+
             default:
                 break;
         }
@@ -94,17 +105,28 @@ public class MeeleFighter : MonoBehaviour
             doCombo = true;
         }
     }
-    IEnumerator PlayHitReaction()
+
+    private IEnumerator PlayHitReaction(Transform attacker)
     {
         inAction = true;
+
+        var dispVec = attacker.position - transform.position;
+        dispVec.y = 0f;
+        transform.rotation = Quaternion.LookRotation(dispVec);
+
+        OnGoHit?.Invoke();
+
         anim.CrossFade("Sword Impact", 0.2f);
         yield return null;
+
 
         var animState = anim.GetNextAnimatorStateInfo(1);
         yield return new WaitForSeconds(animState.length * 0.8f);
 
+        OnHitComplete?.Invoke();
         inAction = false;
-    }    
+    }
+
     public IEnumerator PerformCounterAttack(EnemyController opponent)
     {
         inAction = true;
@@ -132,11 +154,15 @@ public class MeeleFighter : MonoBehaviour
         inAction = false;
     }
 
-    IEnumerator Attack()
+    private IEnumerator Attack(Vector3? attackDir = null)
     {
         inAction = true;
-
         attackState = AttackState.Windup;
+
+        if(attackDir != null)
+        {
+          transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(attackDir.Value), rotationSpeed * Time.deltaTime);
+        }
 
         anim.CrossFade(attacks[comboCount].animName, 0.2f);
         yield return null;
@@ -159,7 +185,6 @@ public class MeeleFighter : MonoBehaviour
                     //swordColider.enabled = true;
                     EnableHitBox(attacks[comboCount]);
                 }
-
             }
             else if (attackState == AttackState.Impact)
             {
@@ -181,7 +206,6 @@ public class MeeleFighter : MonoBehaviour
 
                     StartCoroutine(Attack());
                     yield break;
-
                 }
             }
             yield return null;
@@ -196,12 +220,11 @@ public class MeeleFighter : MonoBehaviour
     {
         if (other.CompareTag("Hitbox") && !inAction)
         {
-            StartCoroutine(PlayHitReaction());
+            StartCoroutine(PlayHitReaction(other.GetComponentInParent<MeeleFighter>().transform));
         }
     }
 
     public List<AttackData> GetAttackDatas => attacks;
 
     public bool IsCounterable => attackState == AttackState.Windup && comboCount == 0;
-
 }
